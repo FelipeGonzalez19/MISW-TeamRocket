@@ -1,0 +1,346 @@
+Domain RecoleccionYProcesamientoDeDatosMedicos {
+    domainVisionStatement = "Captura, procesamiento y verificación de calidad de los datos médicos para asegurar su validez y calidad, garantizando que estén listos para ser utilizados en análisis y estudios."
+
+    Subdomain CapturaDeDatosMedicos supports CreateImagen, CreateDiagnostico {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Capturar datos médicos de manera eficiente y precisa."
+        Entity Imagen {
+            String idImagen
+            String modalidad
+            String regionAnatomica
+            String patologiaCondicion
+            String fechaCaptura
+            String estadoCaptura
+        }
+        Entity Diagnostico {
+            String idDiagnostico
+            String descripcion
+            String metadatos
+            String fechaDiagnostico
+            String estadoDiagnostico
+        }
+    }
+
+    Subdomain ProcesamientoDeImagenesMedicas supports CreateImagenProcesada {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Procesar imágenes médicas con alta precisión."
+        Entity ImagenProcesada {
+            String idImagen
+            String resolucion
+            String contraste
+            String tipoDeImagen
+            String fechaProcesado
+        }
+    }
+
+    Subdomain VerificacionDeCalidadDeDatos supports CreateCalidadDeDatos {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Verificar la calidad de los datos médicos para asegurar su fiabilidad."
+        Entity CalidadDeDatos {
+            String id
+            String tipoVerificacion
+            String estado
+            String fechaVerificacion
+        }
+    }
+}
+
+Domain AnonimizacionYAlmacenamientoDeImagenes {
+    domainVisionStatement = "Asegurar la anonimización y almacenamiento seguro de las imágenes médicas para preservar la privacidad del paciente y garantizar un acceso eficiente a los datos."
+Subdomain AnonimizacionDeImagenes supports CreateImagenAnonimizada
+{
+        type = CORE_DOMAIN
+        domainVisionStatement = "Garantizar la anonimización adecuada de las imágenes médicas."
+        Entity ImagenAnonimizada {
+            String idImagen
+            String metodoAnonimizacion
+            String fecha
+        }
+    }
+
+    Subdomain AlmacenamientoDeImagenes supports CreateImagenAlmacenada
+ {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Almacenar imágenes de manera segura y accesible."
+        Entity ImagenAlmacenada {
+            String idImagen
+            String ubicacion
+            String fechaAlmacenamiento
+        }
+    }
+
+}
+
+Domain DistribucionYComercializacionDeDatos {
+    domainVisionStatement = "Facilitar el acceso y la distribución de datos para generar asociaciones estratégicas y crear valor para IA y otros procesos tecnológicos."
+
+   Subdomain DataPartnership supports CreateAcuerdoDeDatos {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Establecer asociaciones de datos para maximizar el acceso."
+        Entity AcuerdoDeDatos {
+            String idAcuerdo
+            String descripcion
+            String fecha
+            String nivelDeUso
+            String tipoDeColaboracion
+        }
+    }
+    Subdomain ServiciosDeAccesoADatosParaIA supports CreateServicioDeAcceso
+{
+        type = CORE_DOMAIN
+        domainVisionStatement = "Proporcionar acceso a datos para el desarrollo de IA."
+        Entity ServicioDeAcceso {
+            String idServicio
+            String descripcion
+            String tipoAcceso
+            String tipoServicio
+        }
+    }
+
+    Subdomain EstrategiasDeComercializacion supports CreateEstrategiaComercial
+ {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Desarrollar estrategias de comercialización de datos."
+        Entity EstrategiaComercial {
+            String idEstrategia
+            String descripcion
+            String mercadoObjetivo
+        }
+    }
+
+}
+
+Domain GestionDePartnersYProveedores {
+    domainVisionStatement = "Gestionar la relación con proveedores de datos y desarrolladores de IA para crear un ecosistema colaborativo que impulse la innovación."
+
+Subdomain RelacionConProveedoresDeDatos supports CreateProveedorDeDatos
+{
+        type = SUPPORTING_DOMAIN
+        domainVisionStatement = "Gestionar relaciones con proveedores de datos."
+        Entity ProveedorDeDatos {
+            String idProveedor
+            String nombre
+            String tipo
+        }
+    }
+
+    Subdomain ColaboracionConDesarrolladoresDeIA supports CreateDesarrolladorDeIA
+{
+        type = SUPPORTING_DOMAIN
+        domainVisionStatement = "Colaborar con desarrolladores de IA para mejorar soluciones."
+        Entity DesarrolladorDeIA {
+            String idDesarrollador
+            String nombre
+            String proyecto
+        }
+    }
+
+}
+
+Domain PlataformasDeAccesoADatos {
+    domainVisionStatement = "Proporcionar diferentes plataformas de acceso a los datos que ofrezcan soluciones escalables y personalizadas para distintos tipos de clientes."
+Subdomain STAStandard supports CreatePlataformaSTAStandard
+ {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Proporcionar acceso estándar a los datos."
+        Entity PlataformaSTAStandard {
+            String idPlataforma
+            String tipoAcceso
+            String nivel
+        }
+    }
+
+    Subdomain STAPro supports CreatePlataformaSTAPro
+{
+        type = CORE_DOMAIN
+        domainVisionStatement = "Proporcionar acceso premium a los datos."
+        Entity PlataformaSTAPro {
+            String idPlataforma
+            String tipoAcceso
+            String nivel
+        }
+    }
+
+    Subdomain STAEnterprise supports CreatePlataformaSTAEnterprise
+ {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Proporcionar acceso a nivel enterprise a los datos."
+        Entity PlataformaSTAEnterprise {
+            String idPlataforma
+            String tipoAcceso
+            String nivel
+        }
+    }
+
+}
+
+Domain FacturacionYPagos {
+    domainVisionStatement = "Optimizar los modelos de facturación y el proceso de pagos para mejorar la eficiencia financiera y la transparencia."
+
+    Subdomain ModelosDeFacturacion supports CreateModeloDeFacturacion {
+        type = GENERIC_SUBDOMAIN
+        domainVisionStatement = "Desarrollar modelos eficientes de facturación."
+        Entity ModeloDeFacturacion {
+            String idModelo
+            String tipoFacturacion
+            String descripcion
+            String fechaCreacion
+            String estadoModelo
+        }
+    }
+
+    Subdomain ProcesoDePagos supports CreatePago {
+        type = GENERIC_SUBDOMAIN
+        domainVisionStatement = "Gestionar el proceso de pagos de forma eficiente."
+        Entity Pago {
+            String idPago
+            String metodoPago
+            String fecha
+            String estadoPago
+            String transaccionId
+        }
+    }
+}
+
+Domain SeguridadYCumplimientoNormativo {
+    domainVisionStatement = "Garantizar la seguridad de los datos y el cumplimiento de normativas para proteger la información sensible y asegurar la confidencialidad."
+
+    Subdomain CumplimientoDeNormativas supports CreateNorma {
+        type = SUPPORTING_DOMAIN
+        domainVisionStatement = "Asegurar el cumplimiento de normativas vigentes."
+        Entity Norma {
+            String idNorma
+            String descripcion
+            String fechaCumplimiento
+            String estadoCumplimiento
+        }
+    }
+
+    Subdomain SeguridadDeDatos supports CreatePoliticaDeSeguridad {
+        type = SUPPORTING_DOMAIN
+        domainVisionStatement = "Proteger los datos mediante políticas de seguridad robustas."
+        Entity PoliticaDeSeguridad {
+            String idPolitica
+            String descripcion
+            String nivelSeguridad
+            String fechaImplementacion
+        }
+    }
+
+}
+
+UserStory CreateImagen {
+    As an "Empleado de Captura de Datos Medicos"
+    I want to "crear" an "Imagen" with its "idImagen", "modalidad", "regionAnatomica", "patologiaCondicion"
+  so that "Puedo capturar imágenes médicas de manera eficiente y precisa."
+}
+
+UserStory CreateDiagnostico {
+    As an "Empleado de Captura de Datos Médicos"
+    I want to "crear" a "Diagnostico" with its "idDiagnostico", "descripcion", "metadatos"
+  so that "Puedo capturar datos diagnosticos precisos."
+}
+
+UserStory CreateImagenProcesada {
+    As an "Empleado de Procesamiento de Imagenes Medicas"
+    I want to "crear" a "ImagenProcesada" with its "idImagen", "resolucion", "contraste", "tipoDeImagen"
+  so that "Puedo procesar imágenes medicas con alta precision."
+}
+
+UserStory CreateCalidadDeDatos {
+    As an "Empleado de Verificación de Calidad de Datos Medicos"
+    I want to "crear" a "CalidadDeDatos" with its "id", "tipoVerificacion", "estado"
+  so that "Puedo verificar la calidad de los datos médicos y asegurar su fiabilidad."
+}
+
+UserStory CreateImagenAnonimizada {
+    As an "Empleado de Anonimización de Imágenes Médicas"
+    I want to "crear" an "ImagenAnonimizada" with its "idImagen", "métodoAnonimizacion", "fecha"
+  so that "Puedo anonimizar las imagenes médicas para asegurar la privacidad del paciente."
+}
+
+UserStory CreateImagenAlmacenada {
+    As an "Empleado de Almacenamiento de Imágenes Médicas"
+    I want to "crear" an "ImagenAlmacenada" with its "idImagen", "ubicacion", "fechaAlmacenamiento"
+  so that "Puedo almacenar las imagenes médicas de manera segura y accesible."
+}
+
+UserStory CreateAcuerdoDeDatos {
+    As a "Gerente de Alianzas de Datos"
+    I want to "crear" an "AcuerdoDeDatos" with its "idAcuerdo", "descripcion", "fecha", "nivelDeUso"
+  so that "Puedo establecer acuerdos de datos para maximizar el acceso a los datos."
+}
+
+UserStory CreateServicioDeAcceso {
+    As a "Proveedor de Servicios de Acceso a Datos"
+    I want to "crear" a "ServicioDeAcceso" with its "idServicio", "descripcion", "tipoAcceso", "tipoServicio"
+  so that "Puedo proporcionar acceso a los datos para el desarrollo de IA."
+}
+
+UserStory CreateEstrategiaComercial {
+    As a "Estratega de Marketing"
+    I want to "crear" an "EstrategiaComercial" with its "idEstrategia", "descripcion", "mercadoObjetivo"
+  so that "Puedo desarrollar estrategias de comercializacion de datos."
+}
+
+UserStory CreateProveedorDeDatos {
+    As a "Gerente de Relaciones con Proveedores de Datos"
+    I want to "crear" a "ProveedorDeDatos" with its "idProveedor", "nombre", "tipo"
+  so that "Puedo gestionar las relaciones con los proveedores de datos."
+}
+
+UserStory CreateDesarrolladorDeIA {
+    As a "Gerente de Colaboración con Desarrolladores de IA"
+    I want to "crear" a "DesarrolladorDeIA" with its "idDesarrollador", "nombre", "proyecto"
+  so that "Puedo colaborar con desarrolladores de IA para mejorar las soluciones."
+}
+
+UserStory CreatePlataformaSTAStandard {
+    As a "Proveedor de Plataforma de Acceso a Datos"
+    I want to "crear" a "PlataformaSTAStandard" with its "idPlataforma", "tipoAcceso", "nivel"
+  so that "Puedo proporcionar plataformas estándar de acceso a datos."
+}
+
+UserStory CreatePlataformaSTAPro {
+    As a "Proveedor de Plataforma de Acceso a Datos"
+    I want to "crear" a "PlataformaSTAPro" with its "idPlataforma", "tipoAcceso", "nivel"
+  so that "Puedo proporcionar plataformas de acceso a datos premium."
+}
+
+UserStory CreatePlataformaSTAEnterprise {
+    As a "Proveedor de Plataforma de Acceso a Datos"
+    I want to "crear" a "PlataformaSTAEnterprise" with its "idPlataforma", "tipoAcceso", "nivel"
+  so that "Puedo proporcionar plataformas de acceso a datos de nivel empresarial."
+}
+
+UserStory CreateModeloDeFacturacion {
+    As a "Desarrollador de Modelos de Facturación"
+    I want to "crear" a "ModeloDeFacturacion" with its "idModelo", "tipoFacturacion", "descripcion"
+  so that "Puedo desarrollar modelos de facturación eficientes."
+}
+
+UserStory CreatePago {
+    As a "Gerente de Procesos de Pago"
+    I want to "crear" a "Pago" with its "idPago", "metodoPago", "fecha"
+  so that "Puedo gestionar los procesos de pago de manera eficiente."
+}
+
+UserStory CreateNorma {
+    As a "Oficial de Cumplimiento"
+    I want to "crear" a "Norma" with its "idNorma", "descripcion", "fechaCumplimiento"
+  so that "Puedo asegurarme de que se cumplan las normativas relevantes."
+}
+
+UserStory CreatePoliticaDeSeguridad {
+    As a "Oficial de Seguridad de Datos"
+    I want to "crear" a "PoliticaDeSeguridad" with its "idPolítica", "descripción", "nivelSeguridad"
+  so that "Puedo establecer politicas de seguridad robustas para la protección de datos."
+}
+
+UserStory CreateRiesgo {
+    As a "Oficial de Gestión de Riesgos"
+    I want to "crear" a "Riesgo" with its "idRiesgo", "descripcion", "nivel"
+  so that "Puedo gestionar los riesgos de datos de manera efectiva."
+}
+
+
