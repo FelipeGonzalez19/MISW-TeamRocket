@@ -1,0 +1,147 @@
+BoundedContext CapturaDeDatos {
+    domainVisionStatement = "Responsable de capturar datos médicos de manera eficiente y precisa en un ambiente privado geolocalizado."
+    implementationTechnology = "Python"
+}
+
+BoundedContext ProcesamientoDeImagenes {
+    domainVisionStatement = "Procesa imágenes médicas aplicando reglas avanzadas y algoritmos de precisión en un entorno geolocalizado."
+    implementationTechnology = "Python"
+}
+
+BoundedContext VerificacionDeCalidad {
+    domainVisionStatement = "Automatiza la verificación de calidad de los datos médicos para garantizar su fiabilidad."
+    implementationTechnology = "Flask (Python)"
+}
+
+Relationship CapturaDeDatos -> ProcesamientoDeImagenes {
+    type = UpstreamDownstream
+    upstream = CapturaDeDatos
+    downstream = ProcesamientoDeImagenes
+}
+
+Relationship ProcesamientoDeImagenes -> VerificacionDeCalidad {
+    type = UpstreamDownstream
+    upstream = ProcesamientoDeImagenes
+    downstream = VerificacionDeCalidad
+}
+
+BoundedContext AnonimizacionDeImagenes {
+    domainVisionStatement = "Automatiza la anonimización adecuada de las imágenes médicas antes de su almacenamiento en un entorno geolocalizado."
+    implementationTechnology = "Python"
+}
+
+BoundedContext AlmacenamientoDeImagenes {
+    domainVisionStatement = "Almacena imágenes médicas de manera segura y accesible, garantizando cumplimiento con políticas de geolocalización."
+    implementationTechnology = "GCP"
+}
+
+Relationship AnonimizacionDeImagenes -> AlmacenamientoDeImagenes {
+    type = UpstreamDownstream
+    upstream = AnonimizacionDeImagenes
+    downstream = AlmacenamientoDeImagenes
+}
+
+BoundedContext DataPartnership {
+    domainVisionStatement = "Gestiona acuerdos estratégicos de datos con terceros para maximizar el acceso a información valiosa."
+    implementationTechnology = "FastAPI (Python)"
+}
+
+BoundedContext ServiciosDeAccesoADatosParaIA {
+    domainVisionStatement = "Proporciona acceso estructurado y automatizado a datos médicos para entrenar modelos de IA."
+    implementationTechnology = "FastAPI (Python)"
+}
+
+BoundedContext EstrategiasDeComercializacion {
+    domainVisionStatement = "Diseña estrategias comerciales para monetizar datos médicos a través de licencias y modelos de negocio."
+    implementationTechnology = "Node.js"
+}
+
+Relationship DataPartnership -> ServiciosDeAccesoADatosParaIA {
+    type = UpstreamDownstream
+    upstream = DataPartnership
+    downstream = ServiciosDeAccesoADatosParaIA
+}
+
+Relationship ServiciosDeAccesoADatosParaIA -> EstrategiasDeComercializacion {
+    type = UpstreamDownstream
+    upstream = ServiciosDeAccesoADatosParaIA
+    downstream = EstrategiasDeComercializacion
+}
+
+BoundedContext RelacionConProveedores {
+    domainVisionStatement = "Automatiza la gestión de la relación con proveedores de datos para asegurar el suministro de información clave para el negocio."
+    implementationTechnology = "Flask (Python)"
+}
+
+BoundedContext ColaboracionConDesarrolladores {
+    domainVisionStatement = "Facilita la colaboración automatizada con desarrolladores de IA para potenciar soluciones de inteligencia artificial en el negocio."
+    implementationTechnology = "Python"
+}
+
+Relationship RelacionConProveedores -> ColaboracionConDesarrolladores {
+    type = Partnership
+    description = "Los proveedores de datos proveen información clave para el desarrollo de modelos de IA."
+}
+
+BoundedContext STAStandard {
+    domainVisionStatement = "Proporciona acceso estándar a los datos médicos con capacidades básicas de consulta y descarga automatizadas."
+    implementationTechnology = "Django (Python)"
+}
+
+BoundedContext STAPro {
+    domainVisionStatement = "Ofrece acceso premium automatizado con mayor capacidad de procesamiento y soporte avanzado."
+    implementationTechnology = "FastAPI (Python)"
+}
+
+BoundedContext STAEnterprise {
+    domainVisionStatement = "Proporciona acceso empresarial con opciones personalizadas y mayor integración con sistemas externos."
+    implementationTechnology = "Node.js"
+}
+
+Relationship STAStandard -> STAPro {
+    type = UpstreamDownstream
+    upstream = STAStandard
+    downstream = STAPro
+    description = "STAPro ofrece funcionalidades mejoradas basadas en la estructura de STAStandard."
+}
+
+Relationship STAPro -> STAEnterprise {
+    type = UpstreamDownstream
+    upstream = STAPro
+    downstream = STAEnterprise
+    description = "STAEnterprise se basa en los servicios de STAPro pero con características avanzadas y personalización."
+}
+
+BoundedContext ModelosDeFacturacion {
+    domainVisionStatement = "Automatiza el desarrollo de modelos de facturación eficientes y adaptables para mejorar la transparencia y la eficiencia financiera."
+    implementationTechnology = "Django (Python)"
+}
+
+BoundedContext ProcesoDePagos {
+    domainVisionStatement = "Automatiza la gestión eficiente de los procesos de pago para garantizar transacciones rápidas y seguras."
+    implementationTechnology = "FastAPI (Python)"
+}
+
+Relationship ModelosDeFacturacion -> ProcesoDePagos {
+    type = UpstreamDownstream
+    upstream = ModelosDeFacturacion
+    downstream = ProcesoDePagos
+    description = "Los modelos de facturación proporcionan las reglas necesarias para que el proceso de pagos pueda ejecutarse correctamente."
+}
+
+BoundedContext CumplimientoDeNormativas {
+    domainVisionStatement = "Asegura el cumplimiento de normativas legales y regulatorias aplicables para proteger la operación y la reputación de la organización."
+    implementationTechnology = "Django (Python)"
+}
+
+BoundedContext SeguridadDeDatos {
+    domainVisionStatement = "Implementa políticas y mecanismos robustos para garantizar la seguridad y confidencialidad de los datos sensibles."
+    implementationTechnology = "Node.js"
+}
+
+Relationship CumplimientoDeNormativas -> SeguridadDeDatos {
+    type = UpstreamDownstream
+    upstream = CumplimientoDeNormativas
+    downstream = SeguridadDeDatos
+    description = "Las normativas regulan y condicionan las políticas de seguridad que se implementan para proteger los datos sensibles."
+}
