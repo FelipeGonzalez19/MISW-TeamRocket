@@ -1,0 +1,7 @@
+
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+build/
+**/problems-report.html
+.DS_Store
+Thumbs.db
