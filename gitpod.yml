@@ -6,3 +6,5 @@ vscode:
   extensions:
     - contextmapper.context-mapper-vscode-extension
     - jebbs.plantuml
+    - vscjava.vscode-java-pack
+    - asciidoctor.asciidoctor-vscode
