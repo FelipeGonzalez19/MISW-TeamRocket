@@ -1,0 +1,19 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'STAEnterprise' Core Domain" <<Rectangle>> {
+	class PlataformaSTAEnterprise <<(E,DarkSeaGreen) Entity>> {
+		String idPlataforma
+		String tipoAcceso
+		String nivel
+	}
+}
+legend left
+  This subdomain is part of the 'PlataformasDeAccesoADatos' domain.
+
+  Proporcionar acceso a nivel enterprise a los datos.
+end legend
+
+
+@enduml

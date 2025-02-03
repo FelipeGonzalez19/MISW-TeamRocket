@@ -1,0 +1,21 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'ModelosDeFacturacion' Generic Subdomain" <<Rectangle>> {
+	class ModeloDeFacturacion <<(E,DarkSeaGreen) Entity>> {
+		String idModelo
+		String tipoFacturacion
+		String descripcion
+		String fechaCreacion
+		String estadoModelo
+	}
+}
+legend left
+  This subdomain is part of the 'FacturacionYPagos' domain.
+
+  Desarrollar modelos eficientes de facturación.
+end legend
+
+
+@enduml

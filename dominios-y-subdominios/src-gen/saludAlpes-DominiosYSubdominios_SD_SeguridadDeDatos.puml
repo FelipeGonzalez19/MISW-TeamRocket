@@ -1,0 +1,20 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'SeguridadDeDatos' Supporting Domain" <<Rectangle>> {
+	class PoliticaDeSeguridad <<(E,DarkSeaGreen) Entity>> {
+		String idPolitica
+		String descripcion
+		String nivelSeguridad
+		String fechaImplementacion
+	}
+}
+legend left
+  This subdomain is part of the 'SeguridadYCumplimientoNormativo' domain.
+
+  Proteger los datos mediante políticas de seguridad robustas.
+end legend
+
+
+@enduml

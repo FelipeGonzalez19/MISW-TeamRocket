@@ -1,0 +1,19 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'EstrategiasDeComercializacion' Core Domain" <<Rectangle>> {
+	class EstrategiaComercial <<(E,DarkSeaGreen) Entity>> {
+		String idEstrategia
+		String descripcion
+		String mercadoObjetivo
+	}
+}
+legend left
+  This subdomain is part of the 'DistribucionYComercializacionDeDatos' domain.
+
+  Desarrollar estrategias de comercialización de datos.
+end legend
+
+
+@enduml

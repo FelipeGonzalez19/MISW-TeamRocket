@@ -1,0 +1,20 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'CumplimientoDeNormativas' Supporting Domain" <<Rectangle>> {
+	class Norma <<(E,DarkSeaGreen) Entity>> {
+		String idNorma
+		String descripcion
+		String fechaCumplimiento
+		String estadoCumplimiento
+	}
+}
+legend left
+  This subdomain is part of the 'SeguridadYCumplimientoNormativo' domain.
+
+  Asegurar el cumplimiento de normativas vigentes.
+end legend
+
+
+@enduml

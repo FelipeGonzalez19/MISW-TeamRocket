@@ -1,0 +1,20 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'VerificacionDeCalidadDeDatos' Core Domain" <<Rectangle>> {
+	class CalidadDeDatos <<(E,DarkSeaGreen) Entity>> {
+		String id
+		String tipoVerificacion
+		String estado
+		String fechaVerificacion
+	}
+}
+legend left
+  This subdomain is part of the 'RecoleccionYProcesamientoDeDatosMedicos' domain.
+
+  Verificar la calidad de los datos médicos para asegurar su fiabilidad.
+end legend
+
+
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'STAPro' Core Domain" <<Rectangle>> {
+	class PlataformaSTAPro <<(E,DarkSeaGreen) Entity>> {
+		String idPlataforma
+		String tipoAcceso
+		String nivel
+	}
+}
+legend left
+  This subdomain is part of the 'PlataformasDeAccesoADatos' domain.
+
+  Proporcionar acceso premium a los datos.
+end legend
+
+
+@enduml
