@@ -1,0 +1,29 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'CapturaDeDatosMedicos' Core Domain" <<Rectangle>> {
+	class Imagen <<(E,DarkSeaGreen) Entity>> {
+		String idImagen
+		String modalidad
+		String regionAnatomica
+		String patologiaCondicion
+		String fechaCaptura
+		String estadoCaptura
+	}
+	class Diagnostico <<(E,DarkSeaGreen) Entity>> {
+		String idDiagnostico
+		String descripcion
+		String metadatos
+		String fechaDiagnostico
+		String estadoDiagnostico
+	}
+}
+legend left
+  This subdomain is part of the 'RecoleccionYProcesamientoDeDatosMedicos' domain.
+
+  Capturar datos médicos de manera eficiente y precisa.
+end legend
+
+
+@enduml

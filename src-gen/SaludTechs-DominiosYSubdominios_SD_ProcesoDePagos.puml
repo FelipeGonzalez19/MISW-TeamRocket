@@ -1,0 +1,21 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'ProcesoDePagos' Generic Subdomain" <<Rectangle>> {
+	class Pago <<(E,DarkSeaGreen) Entity>> {
+		String idPago
+		String metodoPago
+		String fecha
+		String estadoPago
+		String transaccionId
+	}
+}
+legend left
+  This subdomain is part of the 'FacturacionYPagos' domain.
+
+  Gestionar el proceso de pagos de forma eficiente.
+end legend
+
+
+@enduml

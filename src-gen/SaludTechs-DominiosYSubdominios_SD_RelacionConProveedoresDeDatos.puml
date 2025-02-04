@@ -1,0 +1,19 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'RelacionConProveedoresDeDatos' Supporting Domain" <<Rectangle>> {
+	class ProveedorDeDatos <<(E,DarkSeaGreen) Entity>> {
+		String idProveedor
+		String nombre
+		String tipo
+	}
+}
+legend left
+  This subdomain is part of the 'GestionDePartnersYProveedores' domain.
+
+  Gestionar relaciones con proveedores de datos.
+end legend
+
+
+@enduml

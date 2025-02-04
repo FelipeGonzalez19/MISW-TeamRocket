@@ -1,0 +1,20 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'ServiciosDeAccesoADatosParaIA' Core Domain" <<Rectangle>> {
+	class ServicioDeAcceso <<(E,DarkSeaGreen) Entity>> {
+		String idServicio
+		String descripcion
+		String tipoAcceso
+		String tipoServicio
+	}
+}
+legend left
+  This subdomain is part of the 'DistribucionYComercializacionDeDatos' domain.
+
+  Proporcionar acceso a datos para el desarrollo de IA.
+end legend
+
+
+@enduml

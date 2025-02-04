@@ -1,0 +1,19 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'ColaboracionConDesarrolladoresDeIA' Supporting Domain" <<Rectangle>> {
+	class DesarrolladorDeIA <<(E,DarkSeaGreen) Entity>> {
+		String idDesarrollador
+		String nombre
+		String proyecto
+	}
+}
+legend left
+  This subdomain is part of the 'GestionDePartnersYProveedores' domain.
+
+  Colaborar con desarrolladores de IA para mejorar soluciones.
+end legend
+
+
+@enduml

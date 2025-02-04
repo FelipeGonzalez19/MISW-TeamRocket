@@ -1,0 +1,21 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'ProcesamientoDeImagenesMedicas' Core Domain" <<Rectangle>> {
+	class ImagenProcesada <<(E,DarkSeaGreen) Entity>> {
+		String idImagen
+		String resolucion
+		String contraste
+		String tipoDeImagen
+		String fechaProcesado
+	}
+}
+legend left
+  This subdomain is part of the 'RecoleccionYProcesamientoDeDatosMedicos' domain.
+
+  Procesar imágenes médicas con alta precisión.
+end legend
+
+
+@enduml

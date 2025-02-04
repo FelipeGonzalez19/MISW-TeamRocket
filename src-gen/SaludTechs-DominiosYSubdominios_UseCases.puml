@@ -1,0 +1,142 @@
+@startuml
+
+skinparam componentStyle uml2
+
+"CreateAcuerdoDeDatos" as (CreateAcuerdoDeDatos)
+"CreateCalidadDeDatos" as (CreateCalidadDeDatos)
+"CreateDesarrolladorDeIA" as (CreateDesarrolladorDeIA)
+"CreateDiagnostico" as (CreateDiagnostico)
+"CreateEstrategiaComercial" as (CreateEstrategiaComercial)
+"CreateImagen" as (CreateImagen)
+"CreateImagenAlmacenada" as (CreateImagenAlmacenada)
+"CreateImagenAnonimizada" as (CreateImagenAnonimizada)
+"CreateImagenProcesada" as (CreateImagenProcesada)
+"CreateModeloDeFacturacion" as (CreateModeloDeFacturacion)
+"CreateNorma" as (CreateNorma)
+"CreatePago" as (CreatePago)
+"CreatePlataformaSTAEnterprise" as (CreatePlataformaSTAEnterprise)
+"CreatePlataformaSTAPro" as (CreatePlataformaSTAPro)
+"CreatePlataformaSTAStandard" as (CreatePlataformaSTAStandard)
+"CreatePoliticaDeSeguridad" as (CreatePoliticaDeSeguridad)
+"CreateProveedorDeDatos" as (CreateProveedorDeDatos)
+"CreateRiesgo" as (CreateRiesgo)
+"CreateServicioDeAcceso" as (CreateServicioDeAcceso)
+
+"Empleado de Captura de Datos Medicos" as Actor_0
+"Empleado de Captura de Datos Médicos" as Actor_1
+"Gerente de Colaboración con Desarrolladores de IA" as Actor_10
+"Proveedor de Plataforma de Acceso a Datos" as Actor_11
+"Desarrollador de Modelos de Facturación" as Actor_12
+"Gerente de Procesos de Pago" as Actor_13
+"Oficial de Cumplimiento" as Actor_14
+"Oficial de Seguridad de Datos" as Actor_15
+"Oficial de Gestión de Riesgos" as Actor_16
+"Empleado de Procesamiento de Imagenes Medicas" as Actor_2
+"Empleado de Verificación de Calidad de Datos Medicos" as Actor_3
+"Empleado de Anonimización de Imágenes Médicas" as Actor_4
+"Empleado de Almacenamiento de Imágenes Médicas" as Actor_5
+"Gerente de Alianzas de Datos" as Actor_6
+"Proveedor de Servicios de Acceso a Datos" as Actor_7
+"Estratega de Marketing" as Actor_8
+"Gerente de Relaciones con Proveedores de Datos" as Actor_9
+
+left to right direction
+Actor_0 -- CreateImagen
+Actor_1 -- CreateDiagnostico
+Actor_10 -- CreateDesarrolladorDeIA
+Actor_11 -- CreatePlataformaSTAEnterprise
+Actor_11 -- CreatePlataformaSTAPro
+Actor_11 -- CreatePlataformaSTAStandard
+Actor_12 -- CreateModeloDeFacturacion
+Actor_13 -- CreatePago
+Actor_14 -- CreateNorma
+Actor_15 -- CreatePoliticaDeSeguridad
+Actor_16 -- CreateRiesgo
+Actor_2 -- CreateImagenProcesada
+Actor_3 -- CreateCalidadDeDatos
+Actor_4 -- CreateImagenAnonimizada
+Actor_5 -- CreateImagenAlmacenada
+Actor_6 -- CreateAcuerdoDeDatos
+Actor_7 -- CreateServicioDeAcceso
+Actor_8 -- CreateEstrategiaComercial
+Actor_9 -- CreateProveedorDeDatos
+
+note bottom of (CreateImagen)
+  //Feature:// crear an Imagen
+  //Benefit:// Puedo capturar imágenes médicas de manera eficiente y precisa.
+end note
+note bottom of (CreateDiagnostico)
+  //Feature:// crear a Diagnostico
+  //Benefit:// Puedo capturar datos diagnosticos precisos.
+end note
+note bottom of (CreateImagenProcesada)
+  //Feature:// crear a ImagenProcesada
+  //Benefit:// Puedo procesar imágenes medicas con alta precision.
+end note
+note bottom of (CreateCalidadDeDatos)
+  //Feature:// crear a CalidadDeDatos
+  //Benefit:// Puedo verificar la calidad de los datos médicos y asegurar su fiabilidad.
+end note
+note bottom of (CreateImagenAnonimizada)
+  //Feature:// crear an ImagenAnonimizada
+  //Benefit:// Puedo anonimizar las imagenes médicas para asegurar la privacidad del paciente.
+end note
+note bottom of (CreateImagenAlmacenada)
+  //Feature:// crear an ImagenAlmacenada
+  //Benefit:// Puedo almacenar las imagenes médicas de manera segura y accesible.
+end note
+note bottom of (CreateAcuerdoDeDatos)
+  //Feature:// crear an AcuerdoDeDatos
+  //Benefit:// Puedo establecer acuerdos de datos para maximizar el acceso a los datos.
+end note
+note bottom of (CreateServicioDeAcceso)
+  //Feature:// crear a ServicioDeAcceso
+  //Benefit:// Puedo proporcionar acceso a los datos para el desarrollo de IA.
+end note
+note bottom of (CreateEstrategiaComercial)
+  //Feature:// crear an EstrategiaComercial
+  //Benefit:// Puedo desarrollar estrategias de comercializacion de datos.
+end note
+note bottom of (CreateProveedorDeDatos)
+  //Feature:// crear a ProveedorDeDatos
+  //Benefit:// Puedo gestionar las relaciones con los proveedores de datos.
+end note
+note bottom of (CreateDesarrolladorDeIA)
+  //Feature:// crear a DesarrolladorDeIA
+  //Benefit:// Puedo colaborar con desarrolladores de IA para mejorar las soluciones.
+end note
+note bottom of (CreatePlataformaSTAStandard)
+  //Feature:// crear a PlataformaSTAStandard
+  //Benefit:// Puedo proporcionar plataformas estándar de acceso a datos.
+end note
+note bottom of (CreatePlataformaSTAPro)
+  //Feature:// crear a PlataformaSTAPro
+  //Benefit:// Puedo proporcionar plataformas de acceso a datos premium.
+end note
+note bottom of (CreatePlataformaSTAEnterprise)
+  //Feature:// crear a PlataformaSTAEnterprise
+  //Benefit:// Puedo proporcionar plataformas de acceso a datos de nivel empresarial.
+end note
+note bottom of (CreateModeloDeFacturacion)
+  //Feature:// crear a ModeloDeFacturacion
+  //Benefit:// Puedo desarrollar modelos de facturación eficientes.
+end note
+note bottom of (CreatePago)
+  //Feature:// crear a Pago
+  //Benefit:// Puedo gestionar los procesos de pago de manera eficiente.
+end note
+note bottom of (CreateNorma)
+  //Feature:// crear a Norma
+  //Benefit:// Puedo asegurarme de que se cumplan las normativas relevantes.
+end note
+note bottom of (CreatePoliticaDeSeguridad)
+  //Feature:// crear a PoliticaDeSeguridad
+  //Benefit:// Puedo establecer politicas de seguridad robustas para la protección de datos.
+end note
+note bottom of (CreateRiesgo)
+  //Feature:// crear a Riesgo
+  //Benefit:// Puedo gestionar los riesgos de datos de manera efectiva.
+end note
+
+
+@enduml

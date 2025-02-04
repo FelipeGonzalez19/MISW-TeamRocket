@@ -1,0 +1,21 @@
+@startuml
+
+skinparam componentStyle uml2
+
+package "'DataPartnership' Core Domain" <<Rectangle>> {
+	class AcuerdoDeDatos <<(E,DarkSeaGreen) Entity>> {
+		String idAcuerdo
+		String descripcion
+		String fecha
+		String nivelDeUso
+		String tipoDeColaboracion
+	}
+}
+legend left
+  This subdomain is part of the 'DistribucionYComercializacionDeDatos' domain.
+
+  Establecer asociaciones de datos para maximizar el acceso.
+end legend
+
+
+@enduml

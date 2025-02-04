@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "contextmapper.context-mapper-vscode-extension"
+        "contextmapper.context-mapper-vscode-extension",
+        "jebbs.plantuml"
     ]
 }
