@@ -1,0 +1,71 @@
+digraph "ContextMapGraph" {
+graph ["imagepath"="C:\Users\jmgon\AppData\Local\Temp\GraphvizJava"]
+"AlmacenamientoDeImagenes" ["margin"="0.3","orientation"="27","shape"="egg","fontsize"="16","style"="bold","label"="AlmacenamientoDeImagenes\n","fontname"="sans-serif"]
+"AnonimizacionDeImagenes" ["margin"="0.3","orientation"="21","shape"="egg","fontsize"="16","style"="bold","label"="AnonimizacionDeImagenes\n","fontname"="sans-serif"]
+"CapturaDeDatos" ["margin"="0.3","orientation"="59","shape"="egg","fontsize"="16","style"="bold","label"="CapturaDeDatos\n","fontname"="sans-serif"]
+"ProcesamientoDeImagenes" ["margin"="0.3","orientation"="112","shape"="egg","fontsize"="16","style"="bold","label"="ProcesamientoDeImagenes\n","fontname"="sans-serif"]
+"VerificacionDeCalidad" ["margin"="0.3","orientation"="241","shape"="egg","fontsize"="16","style"="bold","label"="VerificacionDeCalidad\n","fontname"="sans-serif"]
+"ColaboracionConDesarrolladores" ["margin"="0.3","orientation"="334","shape"="egg","fontsize"="16","style"="bold","label"="ColaboracionConDesarrolladores\n","fontname"="sans-serif"]
+"CumplimientoDeNormativas" ["margin"="0.3","orientation"="246","shape"="egg","fontsize"="16","style"="bold","label"="CumplimientoDeNormativas\n","fontname"="sans-serif"]
+"SeguridadDeDatos" ["margin"="0.3","orientation"="171","shape"="egg","fontsize"="16","style"="bold","label"="SeguridadDeDatos\n","fontname"="sans-serif"]
+"DataPartnership" ["margin"="0.3","orientation"="53","shape"="egg","fontsize"="16","style"="bold","label"="DataPartnership\n","fontname"="sans-serif"]
+"ServiciosDeAccesoADatosParaIA" ["margin"="0.3","orientation"="133","shape"="egg","fontsize"="16","style"="bold","label"="ServiciosDeAccesoADatosParaIA\n","fontname"="sans-serif"]
+"EstrategiasDeComercializacion" ["margin"="0.3","orientation"="130","shape"="egg","fontsize"="16","style"="bold","label"="EstrategiasDeComercializacion\n","fontname"="sans-serif"]
+"ModelosDeFacturacion" ["margin"="0.3","orientation"="306","shape"="egg","fontsize"="16","style"="bold","label"="ModelosDeFacturacion\n","fontname"="sans-serif"]
+"ProcesoDePagos" ["margin"="0.3","orientation"="38","shape"="egg","fontsize"="16","style"="bold","label"="ProcesoDePagos\n","fontname"="sans-serif"]
+"RelacionConProveedores" ["margin"="0.3","orientation"="224","shape"="egg","fontsize"="16","style"="bold","label"="RelacionConProveedores\n","fontname"="sans-serif"]
+"STAEnterprise" ["margin"="0.3","orientation"="348","shape"="egg","fontsize"="16","style"="bold","label"="STAEnterprise\n","fontname"="sans-serif"]
+"STAPro" ["margin"="0.3","orientation"="226","shape"="egg","fontsize"="16","style"="bold","label"="STAPro\n","fontname"="sans-serif"]
+"STAStandard" ["margin"="0.3","orientation"="344","shape"="egg","fontsize"="16","style"="bold","label"="STAStandard\n","fontname"="sans-serif"]
+"AnonimizacionDeImagenes" -> "AlmacenamientoDeImagenes" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"CapturaDeDatos" -> "ProcesamientoDeImagenes" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"ProcesamientoDeImagenes" -> "VerificacionDeCalidad" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"VerificacionDeCalidad" -> "AnonimizacionDeImagenes" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"CumplimientoDeNormativas" -> "SeguridadDeDatos" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"DataPartnership" -> "ServiciosDeAccesoADatosParaIA" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"ServiciosDeAccesoADatosParaIA" -> "EstrategiasDeComercializacion" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"ModelosDeFacturacion" -> "ProcesoDePagos" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"RelacionConProveedores" -> "ColaboracionConDesarrolladores" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"STAPro" -> "STAEnterprise" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"STAStandard" -> "STAPro" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+}
