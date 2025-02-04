@@ -59,6 +59,8 @@ Para acceder a la documentación y las imagenes generadas:
 2. Explorar los archivos generados para visualizar la información detallada.
 3. Para regenerar los diagramas, abrir los archivos en Visual Studio Code y utilizar la extensión Context Mapper.
 
+![Modo uso PlantUML](./docs/Modo-uso-plantuml.png)
+
 ---
 
 ## Documentación del lenguaje ubicuo 
@@ -74,6 +76,16 @@ Para acceder a la documentación y las imagenes generadas:
 
 La documentación de los contextos acotados para SaludTech tiene como objetivo detallar la arquitectura actual (AS-IS) y proponer una arquitectura futura (TO-BE), garantizando alineación con los objetivos estratégicos del sistema.
 Este proceso se enfoca en identificar los subdominios clave y su implementación técnica, así como las relaciones entre contextos.
+
+### Uso
+
+Para acceder a la documentación y las imagenes generadas:
+
+1. Navegar a la carpeta `ContextMapProject/app/src/main/cml`.
+2. Explorar los archivos generados para visualizar la información detallada.
+3. Para regenerar los diagramas, abrir los archivos en Visual Studio Code y utilizar la extensión Context Mapper.
+
+![Modo uso Graphical Context Map](./docs/Modo-uso-graphical-context-map.png)
 
 ### Estado AS-IS
 
