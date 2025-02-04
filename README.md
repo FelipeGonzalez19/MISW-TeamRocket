@@ -72,9 +72,48 @@ Para acceder a la documentación y las imagenes generadas:
 
 ## Documentación de contextos acotados 
 
-### AS-IS ContextMap
+La documentación de los contextos acotados para SaludTech tiene como objetivo detallar la arquitectura actual (AS-IS) y proponer una arquitectura futura (TO-BE), garantizando alineación con los objetivos estratégicos del sistema.
+Este proceso se enfoca en identificar los subdominios clave y su implementación técnica, así como las relaciones entre contextos.
+
+### Estado AS-IS
+
+El estado AS-IS refleja la arquitectura actual de SaludTech.
+Los contextos acotados están organizados para garantizar la captura, procesamiento y almacenamiento de datos médicos, además de su comercialización y cumplimiento regulatorio.
+
+#### Subdominios Identificados:
+
+1. CapturaDeDatos: Responsable de capturar datos médicos de manera eficiente y precisa.
+2. ProcesamientoDeImagenes: Procesa imágenes médicas aplicando reglas avanzadas y algoritmos de precisión.
+3. VerificacionDeCalidad: Verifica la calidad de los datos médicos para garantizar su fiabilidad.
+4. AnonimizacionDeImagenes: Garantiza la anonimización adecuada de las imágenes antes de su almacenamiento.
+5. AlmacenamientoDeImagenes: Almacena imágenes médicas de manera segura y accesible.
+6. Otros: Relacionados con comercialización, normativas, y seguridad.
+
+#### Relaciones entre Contextos
+
+- Secuenciales: CapturaDeDatos → ProcesamientoDeImagenes → VerificacionDeCalidad → AnonimizacionDeImagenes → AlmacenamientoDeImagenes.
+- Colaborativos: RelacionConProveedores ↔ ColaboracionConDesarrolladores
+
 ![AS-IS ContextMap](src-gen/SaludTech-ContextosAcotadosAS-IS_ContextMap.png)
-### TO-BE ContextMap
+
+### Estado TO-BE
+
+El estado TO-BE plantea una optimización para manejar la expansión global, automatizar procesos y garantizar la escalabilidad. Se enfoca en la regionalización y refinamiento del lenguaje ubicuo.
+
+#### Subdominios Optimizados
+
+1. CapturaDeDatos: Incorporación de geolocalización para capturar datos en regiones específicas.
+2. ProcesamientoDeImagenes: Automatización avanzada para escenarios geográficos diversificados.
+3. AnonimizacionDeImagenes: Procesos refinados para cumplir con normativas internacionales.
+
+#### Relaciones entre Contextos
+
+- Regionalización: Agrupación de contextos por regiones (Latinoamérica, Europa, Asia, etc.).
+- Mejores Prácticas: Uso de Shared Kernel entre contextos similares.
+
 ![TO-BE ContextMap](src-gen/SaludTech-ContextosAcotadosTO-BE_ContextMap.png)
+
+### Conclusión
+La documentación de los contextos acotados proporciona una visión clara y estructurada de la arquitectura de SaludTech, permitiendo a los equipos técnicos y de negocio colaborar de manera efectiva
 
 ---
