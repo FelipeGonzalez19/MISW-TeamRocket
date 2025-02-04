@@ -1,0 +1,122 @@
+ContextMap SaludTechASIS {
+    type = SYSTEM_LANDSCAPE
+    state = AS_IS
+
+    /* Add bounded contexts to this context map: */
+    contains CapturaDeDatos
+    contains ProcesamientoDeImagenes
+    contains VerificacionDeCalidad
+    contains AnonimizacionDeImagenes
+    contains AlmacenamientoDeImagenes
+    contains DataPartnership
+    contains ServiciosDeAccesoADatosParaIA
+    contains EstrategiasDeComercializacion
+    contains RelacionConProveedores
+    contains ColaboracionConDesarrolladores
+    contains STAStandard
+    contains STAPro
+    contains STAEnterprise
+    contains ModelosDeFacturacion
+    contains ProcesoDePagos
+    contains CumplimientoDeNormativas
+    contains SeguridadDeDatos
+
+    /* Define the context relationships: */
+    CapturaDeDatos -> ProcesamientoDeImagenes
+    ProcesamientoDeImagenes -> VerificacionDeCalidad
+    VerificacionDeCalidad -> AnonimizacionDeImagenes
+    AnonimizacionDeImagenes -> AlmacenamientoDeImagenes
+    DataPartnership -> ServiciosDeAccesoADatosParaIA
+    ServiciosDeAccesoADatosParaIA -> EstrategiasDeComercializacion
+    RelacionConProveedores <-> ColaboracionConDesarrolladores
+    STAStandard -> STAPro
+    STAPro -> STAEnterprise
+    ModelosDeFacturacion -> ProcesoDePagos
+    CumplimientoDeNormativas -> SeguridadDeDatos
+}
+
+/* Bounded Context Definitions */
+BoundedContext CapturaDeDatos {
+    domainVisionStatement = "Responsable de capturar datos médicos de manera eficiente y precisa."
+    implementationTechnology = "Python"
+}
+
+BoundedContext ProcesamientoDeImagenes {
+    domainVisionStatement = "Procesa imágenes médicas aplicando reglas avanzadas y algoritmos de precisión."
+    implementationTechnology = "Python"
+}
+
+BoundedContext VerificacionDeCalidad {
+    domainVisionStatement = "Verifica la calidad de los datos médicos para garantizar su fiabilidad."
+    implementationTechnology = "Flask (Python)"
+}
+
+BoundedContext AnonimizacionDeImagenes {
+    domainVisionStatement = "Garantiza la anonimización adecuada de las imágenes médicas antes de su almacenamiento."
+    implementationTechnology = "Python"
+}
+
+BoundedContext AlmacenamientoDeImagenes {
+    domainVisionStatement = "Almacena imágenes médicas de manera segura y accesible."
+    implementationTechnology = "GCP"
+}
+
+BoundedContext DataPartnership {
+    domainVisionStatement = "Gestiona acuerdos estratégicos de datos con terceros para maximizar el acceso a información valiosa."
+    implementationTechnology = "FastAPI (Python)"
+}
+
+BoundedContext ServiciosDeAccesoADatosParaIA {
+    domainVisionStatement = "Proporciona acceso estructurado a datos médicos para entrenar modelos de IA."
+    implementationTechnology = "FastAPI (Python)"
+}
+
+BoundedContext EstrategiasDeComercializacion {
+    domainVisionStatement = "Diseña estrategias comerciales para monetizar datos médicos a través de licencias y modelos de negocio."
+    implementationTechnology = "Node.js"
+}
+
+BoundedContext RelacionConProveedores {
+    domainVisionStatement = "Gestiona la relación con proveedores de datos para asegurar el suministro de información clave para el negocio."
+    implementationTechnology = "Flask (Python)"
+}
+
+BoundedContext ColaboracionConDesarrolladores {
+    domainVisionStatement = "Facilita la colaboración con desarrolladores de IA para potenciar soluciones de inteligencia artificial en el negocio."
+    implementationTechnology = "Python"
+}
+
+BoundedContext STAStandard {
+    domainVisionStatement = "Proporciona acceso estándar a los datos médicos con capacidades básicas de consulta y descarga."
+    implementationTechnology = "Django (Python)"
+}
+
+BoundedContext STAPro {
+    domainVisionStatement = "Ofrece acceso premium con mayor capacidad de procesamiento y soporte avanzado."
+    implementationTechnology = "FastAPI (Python)"
+}
+
+BoundedContext STAEnterprise {
+    domainVisionStatement = "Proporciona acceso empresarial con opciones personalizadas y mayor integración con sistemas externos."
+    implementationTechnology = "Node.js"
+}
+
+BoundedContext ModelosDeFacturacion {
+    domainVisionStatement = "Desarrolla modelos de facturación eficientes y adaptables para mejorar la transparencia y la eficiencia financiera."
+    implementationTechnology = "Django (Python)"
+}
+
+BoundedContext ProcesoDePagos {
+    domainVisionStatement = "Gestiona de manera eficiente los procesos de pago para garantizar transacciones rápidas y seguras."
+    implementationTechnology = "FastAPI (Python)"
+}
+
+BoundedContext CumplimientoDeNormativas {
+    domainVisionStatement = "Asegura el cumplimiento de normativas legales y regulatorias aplicables para proteger la operación y la reputación de la organización."
+    implementationTechnology = "Django (Python)"
+}
+
+BoundedContext SeguridadDeDatos {
+    domainVisionStatement = "Implementa políticas y mecanismos robustos para garantizar la seguridad y confidencialidad de los datos sensibles."
+    implementationTechnology = "Node.js"
+}
