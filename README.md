@@ -26,17 +26,10 @@ Para acceder a la documentación y las imagenes generadas:
 
 
 
-## Documentación del lenguaje ubicuo 
+## Entrega 3
 
-
-
-
----
-
-
-## Documentación de contextos acotados 
-
-
+En la carpeta /entrega-3 encontrará toda la información respecto a dicha entrega
 
 
 ---
+
