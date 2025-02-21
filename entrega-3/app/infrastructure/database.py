@@ -9,10 +9,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
+# en el .env el DATABASE_URL debe tener esta estructura
+# DATABASE_URL=postgresql://usuario:contraseña@host:puerto/base_de_datos
+# debe estar en el root de la entrega-3
+
+
 
 engine = create_engine(DATABASE_URL, echo=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-Base = declarative_base() 
+Base = declarative_base()
 
 
 def init_db():

@@ -29,12 +29,15 @@ El servicio sigue una **arquitectura basada en eventos** y principios de **DDD**
   Se implementan **puertos y adaptadores** para desacoplar la lógica de negocio de la infraestructura.
 
 ---
+
 ## Estructura Carpetas
 
 ## 📂 `application/` - Capa de Aplicación
+
 Esta capa contiene la lógica de **casos de uso** y **servicios de aplicación**.
 
 - **`commands.py`**: Define los comandos (acciones) que la aplicación puede ejecutar.
+
   - `ProcesarImagenCommand`: Comando para anonimizar una imagen.
   - `RegistrarImagenCommand`: Comando para registrar una imagen en el sistema.
   - `ObtenerImagenQuery`: Consulta para obtener una imagen por ID.
@@ -46,6 +49,7 @@ Esta capa contiene la lógica de **casos de uso** y **servicios de aplicación**
 ---
 
 ## 📂 `domain/` - Capa de Dominio
+
 Define las entidades, eventos de dominio y reglas de negocio.
 
 - **`models.py`**: Define la entidad `ImagenMedica` con sus atributos y validaciones.
@@ -56,6 +60,7 @@ Define las entidades, eventos de dominio y reglas de negocio.
 ---
 
 ## 📂 `infrastructure/` - Capa de Infraestructura
+
 Contiene la implementación de repositorios, la API y la conexión con la base de datos.
 
 - **`api.py`**: Define los endpoints de FastAPI y la inyección de dependencias.
@@ -66,14 +71,17 @@ Contiene la implementación de repositorios, la API y la conexión con la base d
 ---
 
 ## 📂 `main.py`
+
 Archivo principal que inicia la aplicación FastAPI.
 
 ---
 
 ## 📂 `locustfile.py`
+
 Archivo para las pruebas de carga y estres. Test de rendimiento de la aplicacion.
 
 ---
+
 ## 🔗 Flujo de Trabajo
 
 1. **Un cliente envía una solicitud** para registrar una imagen (`POST /imagenes`).
@@ -86,8 +94,8 @@ Archivo para las pruebas de carga y estres. Test de rendimiento de la aplicacion
 
 Esta arquitectura permite **modularidad**, **separación de responsabilidades** y **fácil integración con nuevas tecnologías**.
 
-
 ---
+
 ## Módulos del Servicio
 
 El servicio está compuesto por los siguientes módulos:
@@ -96,33 +104,38 @@ El servicio está compuesto por los siguientes módulos:
 
 Encapsula la lógica de negocio a través de comandos, consultas y servicios de aplicación:
 
-- **Comandos**:  
-  - `RegistrarImagenCommand`  
-  - `ProcesarImagenCommand`  
+- **Comandos**:
 
-- **Consultas**:  
-  - `ObtenerImagenQuery`  
+  - `RegistrarImagenCommand`
+  - `ProcesarImagenCommand`
 
-- **Servicios**:  
-  - `ImagenCommandService`  
-  - `ImagenQueryService`  
+- **Consultas**:
+
+  - `ObtenerImagenQuery`
+
+- **Servicios**:
+  - `ImagenCommandService`
+  - `ImagenQueryService`
 
 ### 2. Módulo de Dominio
 
 Define las reglas de negocio y los eventos de dominio:
 
-- **Entidades**:  
-  - `ImagenMedica`  
+- **Entidades**:
 
-- **Eventos**:  
-  - `ImagenRegistrada`  
-  - `ImagenAnonimizada`  
+  - `ImagenMedica`
 
-- **Manejadores de Eventos**:  
-  - `ImagenRegistradaHandler`  
+- **Eventos**:
 
-- **Repositorio Abstracto**:  
-  - `ImagenRepositorio`  
+  - `ImagenRegistrada`
+  - `ImagenAnonimizada`
+
+- **Manejadores de Eventos**:
+
+  - `ImagenRegistradaHandler`
+
+- **Repositorio Abstracto**:
+  - `ImagenRepositorio`
 
 ### 3. Módulo de Infraestructura
 
@@ -180,27 +193,26 @@ pip install -r requirements.txt
 ```sh
 uvicorn app.infrastructure.api:app --host 0.0.0.0 --port 8000
 ```
+
 ### Endpoints disponibles
 
-
-| Método | Endpoint                  | Descripción                                     |
-|--------|---------------------------|-------------------------------------------------|
-| GET    | `/health`                  | Verifica el estado del servicio                 |
-| POST   | `/imagenes`                | Registra una nueva imagen médica                |
-| POST   | `/imagenes/{id}/procesar`  | Inicia el proceso de anonimización de una imagen |
-| GET    | `/imagenes/{id}`           | Obtiene una imagen por su ID                    |
-| GET    | `/imagenes`                | Lista todas las imágenes registradas            |
-
-
+| Método | Endpoint                  | Descripción                                      |
+| ------ | ------------------------- | ------------------------------------------------ |
+| GET    | `/health`                 | Verifica el estado del servicio                  |
+| POST   | `/imagenes`               | Registra una nueva imagen médica                 |
+| POST   | `/imagenes/{id}/procesar` | Inicia el proceso de anonimización de una imagen |
+| GET    | `/imagenes/{id}`          | Obtiene una imagen por su ID                     |
+| GET    | `/imagenes`               | Lista todas las imágenes registradas             |
 
 ### Documentación de la API
 
-
 ### Verificar estado del servicio
+
 **Endpoint:** `/health`  
 **Método:** `GET`  
 **Descripción:** Verifica si el servicio está funcionando correctamente.  
 **Respuesta:**
+
 ```json
 {
   "status": "ok",
@@ -208,13 +220,13 @@ uvicorn app.infrastructure.api:app --host 0.0.0.0 --port 8000
 }
 ```
 
-
-
 ### Resetear la base de datos
+
 **Endpoint:** `/reset-db`  
 **Método:** `POST`  
 **Descripción:** Borra y recrea la base de datos.
 **Respuesta:**
+
 ```json
 {
   "status": "success",
@@ -222,40 +234,41 @@ uvicorn app.infrastructure.api:app --host 0.0.0.0 --port 8000
 }
 ```
 
-
 ### Registrar una imagen
 
 **Endpoint:** `/imagenes`  
 **Método:** `POST`  
 **Descripción:** Registra una nueva imagen en el sistema.
 **Informacion enviada:**
+
 ```json
 {
   "id": "1",
   "tipo_imagen": "Rayos X",
   "region_anatomica": "Torax",
-   "origen_datos": "Torax",
+  "origen_datos": "Torax",
   "data": {
     "resolucion": "1024x768",
     "formato": "DICOM"
   }
 }
 ```
+
 **Respuesta:**
+
 ```json
 {
-    "id": "1",
-    "tipo_imagen": "Rayos X",
-    "region_anatomica": "Torax",
-    "data": {
-        "resolucion": "1024x768",
-        "formato": "DICOM"
-    },
-    "origen_datos": "Torax",
-    "estado_procesamiento": "subida",
-    "fecha_subida": "2025-02-21T14:53:22.335264"
+  "id": "1",
+  "tipo_imagen": "Rayos X",
+  "region_anatomica": "Torax",
+  "data": {
+    "resolucion": "1024x768",
+    "formato": "DICOM"
+  },
+  "origen_datos": "Torax",
+  "estado_procesamiento": "subida",
+  "fecha_subida": "2025-02-21T14:53:22.335264"
 }
-
 ```
 
 ### Obtener una imagen por ID
@@ -264,11 +277,12 @@ uvicorn app.infrastructure.api:app --host 0.0.0.0 --port 8000
 **Método:** `GET`  
 **Descripción:** Obtiene los datos de una imagen por su ID.
 **Respuesta:**
+
 ```json
 {
-    "tipo_imagen": "Rayos X",
-    "id": "fddsdsg",
-    "region_anatomica": "Torax"
+  "tipo_imagen": "Rayos X",
+  "id": "fddsdsg",
+  "region_anatomica": "Torax"
 }
 ```
 
@@ -278,24 +292,69 @@ uvicorn app.infrastructure.api:app --host 0.0.0.0 --port 8000
 **Método:** `GET`  
 **Descripción:** Retorna una lista de todas las imágenes registradas.
 **Respuesta:**
+
 ```json
 {
     {
         "tipo_imagen": "Rayos X",
         "id": "fddsdsg",
         "region_anatomica": "Torax"
-    }   
+    }
 }
 ```
-### Procesar una imagen
 
+### Procesar una imagen
 
 **Endpoint:** `/imagenes/procesar/{imagen_id}`  
 **Método:** `POST`  
 **Descripción:** Procesa una imagen existente en el sistema.
 **Respuesta:**
+
 ```json
 {
-    "mensaje": "Imagen en proceso de anonimización"
+  "mensaje": "Imagen en proceso de anonimización"
 }
+```
+
+# Pasos para ejecutar la aplicación
+
+## 1. Clonar el repositorio
+
+```bash
+
+
+```
+
+## 2. Crear y activar un entorno virtual
+
+```bash
+python -m venv venv   #mac
+source venv/bin/activate  #windows
+
+```
+
+## 3. Instalar dependencias
+
+```bash
+pip install -r requirements.txt
+
+```
+
+## 4. Configurar variables de entorno
+
+```bash
+DATABASE_URL=postgresql://sta_user:password@localhost/sta_db
+
+```
+
+## 5. Inicializar la base de datos
+
+```bash
+python -m app.infrastructure.database
+```
+
+## 6. Ejecutar la aplicación
+
+```bash
+uvicorn app.infrastructure.api:app --host 0.0.0.0 --port 8000 --reload
 ```
