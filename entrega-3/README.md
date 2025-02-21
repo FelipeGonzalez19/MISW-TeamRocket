@@ -358,3 +358,10 @@ python -m app.infrastructure.database
 ```bash
 uvicorn app.infrastructure.api:app --host 0.0.0.0 --port 8000 --reload
 ```
+
+## 7. Navegar a http://localhost:8089 para revisar rendimiento
+
+```bash
+http://localhost:8089
+```
+
