@@ -368,9 +368,13 @@ python -m app.infrastructure.database
 uvicorn app.infrastructure.api:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-## 7. Navegar a http://localhost:8089 para configurar parametros
+### 6.1. Pruebas de carga con locust
 
 ```bash
-http://localhost:8089
+locust -f locustfile.py --host=http://0.0.0.0:8000
 ```
+
+## 7. Navegar a http://localhost:8089 para configurar parametros
+
+[http://localhost:8089](http://localhost:8089)
 
