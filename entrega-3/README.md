@@ -343,7 +343,17 @@ pip install -r requirements.txt
 
 ```bash
 DATABASE_URL=postgresql://sta_user:password@localhost/sta_db
+```
 
+Para pruebas locales, estas instrucciones pueden ayudar a montar la base de datos.
+
+```bash
+sudo apt install postgresql
+sudo su - postgres
+# Crea user sta_user Y pone password(Llenar con: password)
+createuser sta_user -P
+createdb sta_db --owner sta_user
+# Salir
 ```
 
 ## 5. Inicializar la base de datos
