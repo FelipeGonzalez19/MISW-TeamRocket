@@ -321,8 +321,7 @@ uvicorn app.infrastructure.api:app --host 0.0.0.0 --port 8000
 ## 1. Clonar el repositorio
 
 ```bash
-
-
+git clone https://github.com/FelipeGonzalez19/MISW-TeamRocket.git
 ```
 
 ## 2. Crear y activar un entorno virtual
