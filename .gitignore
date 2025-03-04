@@ -1,6 +1,8 @@
 .env
 venv
 __pycache__
+prueba-concepto/data/
+
 ### Gradle ###
 .gradle/
 build/
