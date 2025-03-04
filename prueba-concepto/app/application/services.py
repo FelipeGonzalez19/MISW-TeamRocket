@@ -4,9 +4,11 @@ from ..domain.models import ImagenMedica
 from ..infrastructure.Imagenes.repositories import ImagenRepositorio
 from ..infrastructure.Anonimizar.repositories import AnonimizacionRepositorio
 from ..infrastructure.Usuarios.repositories import UsuarioRepositorio
-from ..domain.events import EventDispatcher, ImagenAnonimizada, ImagenRegistrada, UsuarioRegistrado
-from .commands import ObtenerImagenQuery, ProcesarImagenCommand, RegistrarImagenCommand, AnonimizarImagenCommand, RegistrarUsuarioCommand, ObtenerUsuarioQuery
+from ..infrastructure.Monetización.repositories import MonetizacionRepositorio
+from ..domain.events import EventDispatcher, ImagenAnonimizada, ImagenRegistrada, UsuarioRegistrado, ImagenAccedida
+from .commands import ObtenerImagenQuery, ProcesarImagenCommand, RegistrarImagenCommand, AnonimizarImagenCommand, RegistrarUsuarioCommand, ObtenerUsuarioQuery, RegistrarAccesoImagenCommand
 from ..infrastructure.Usuarios.models import Usuario
+from ..infrastructure.Monetización.models import MonetizacionRegistro
 
 class ImagenCommandService:
     def __init__(self, repo: ImagenRepositorio, event_dispatcher: EventDispatcher):
@@ -80,3 +82,26 @@ class UsuarioService:
 
     def listar_usuarios(self):
         return self.repo.obtener_todos()
+    
+class MonetizacionService:
+    def __init__(self, repo: MonetizacionRepositorio):
+        self.repo = repo
+
+    def registrar_acceso(self, command: RegistrarAccesoImagenCommand):
+        registro = self.repo.obtener_por_id(command.imagen_id)
+
+        if not registro:
+            registro = MonetizacionRegistro(
+                id=command.imagen_id,
+                imagen_id=command.imagen_id,
+                usuario_id=command.usuario_id,
+                accesos=1,
+                valor_por_acceso=5.0,
+                total_pagar=5.0
+            )
+        else:
+            registro.accesos += 1
+            registro.total_pagar = registro.accesos * registro.valor_por_acceso
+
+        self.repo.guardar(registro)
+        return ImagenAccedida(command.imagen_id, command.usuario_id)

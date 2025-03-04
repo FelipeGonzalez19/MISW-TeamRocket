@@ -22,6 +22,11 @@ class ImagenRegistrada(Event):
 @dataclass
 class UsuarioRegistrado:
     usuario_id: str
+    
+@dataclass
+class ImagenAccedida:
+    imagen_id: str
+    usuario_id: str
 
 
 
