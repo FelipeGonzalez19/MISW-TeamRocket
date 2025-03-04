@@ -25,3 +25,8 @@ class RegistrarUsuarioCommand:
 class ObtenerUsuarioQuery:
     def __init__(self, usuario_id: str):
         self.usuario_id = usuario_id
+        
+class RegistrarAccesoImagenCommand:
+    def __init__(self, imagen_id: str, usuario_id: str):
+        self.imagen_id = imagen_id
+        self.usuario_id = usuario_id
