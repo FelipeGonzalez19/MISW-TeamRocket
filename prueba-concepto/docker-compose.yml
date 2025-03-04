@@ -140,3 +140,37 @@ services:
       - db
     ports:
       - "5001:5001"
+  
+  monetizacion_imagenes:
+    container_name: monetizacion_imagenes
+    hostname: monetizacion_imagenes
+    build:
+      context: .
+      dockerfile: monetizacion.Dockerfile
+    environment:
+      - DATABASE_URL=postgresql://sta_user:password@postgresdb/sta_db
+      - PULSAR_ADDRESS=broker
+    networks:
+      - pulsar
+    depends_on:
+      - broker
+      - db
+    ports:
+      - "5002:5002"
+
+  gestion_usuarios:
+    container_name: gestion_usuarios
+    hostname: gestion_usuarios
+    build:
+      context: .
+      dockerfile: usuarios.Dockerfile
+    environment:
+      - DATABASE_URL=postgresql://sta_user:password@postgresdb/sta_db
+      - PULSAR_ADDRESS=broker
+    networks:
+      - pulsar
+    depends_on:
+      - broker
+      - db
+    ports:
+      - "5003:5003"
