@@ -6,3 +6,5 @@ pydantic
 python-dotenv
 psycopg2
 locust
+pulsar-client
+pulsar-client[avro]
