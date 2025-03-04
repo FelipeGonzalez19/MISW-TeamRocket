@@ -107,20 +107,36 @@ services:
     volumes:
       - ./data/postgres:/var/lib/postgresql/data
   # Servicios de AeroAlpes
-  saludtech:
+  imagenes_medicas:
     container_name: imagenes_medicas
     hostname: imagenes_medicas
-    build: .
+    build:
+      context: .
+      dockerfile: imagenes.Dockerfile
     environment:
       - DATABASE_URL=postgresql://sta_user:password@postgresdb/sta_db
       - PULSAR_ADDRESS=broker
     networks:
       - pulsar
-    labels:
-      SidecarDiscover: "false"
     depends_on:
       - broker
       - db
     ports:
       - "5000:5000"
 
+  anonimizar_imagenes:
+    container_name: anonimizar_imagenes
+    hostname: anonimizar_imagenes
+    build:
+      context: .
+      dockerfile: anonimizar.Dockerfile
+    environment:
+      - DATABASE_URL=postgresql://sta_user:password@postgresdb/sta_db
+      - PULSAR_ADDRESS=broker
+    networks:
+      - pulsar
+    depends_on:
+      - broker
+      - db
+    ports:
+      - "5001:5001"
