@@ -17,6 +17,12 @@ class ImagenAnonimizada:
 class ImagenRegistrada(Event):
     def __init__(self, imagen_id: str):
         self.imagen_id = imagen_id
+        
+
+@dataclass
+class UsuarioRegistrado:
+    usuario_id: str
+
 
 
 class EventDispatcher:
