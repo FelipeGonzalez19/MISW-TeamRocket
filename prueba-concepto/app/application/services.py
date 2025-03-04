@@ -1,9 +1,10 @@
 # app/application/services.py
 from fastapi import HTTPException
 from ..domain.models import ImagenMedica
-from ..infrastructure.repositories import ImagenRepositorio
+from ..infrastructure.Imagenes.repositories import ImagenRepositorio
+from ..infrastructure.Anonimizar.repositories import AnonimizacionRepositorio
 from ..domain.events import EventDispatcher, ImagenAnonimizada, ImagenRegistrada
-from .commands import ObtenerImagenQuery, ProcesarImagenCommand, RegistrarImagenCommand
+from .commands import ObtenerImagenQuery, ProcesarImagenCommand, RegistrarImagenCommand, AnonimizarImagenCommand
 
 
 class ImagenCommandService:
@@ -42,3 +43,17 @@ class ImagenQueryService:
 
     def listar_imagenes(self):
         return self.repo.obtener_todas()
+    
+class AnonimizacionService:
+    def __init__(self, repo: AnonimizacionRepositorio):
+        self.repo = repo
+
+    def anonimizar_imagen(self, command: AnonimizarImagenCommand):
+        registro = self.repo.obtener_por_id(command.imagen_id)
+        if not registro:
+            raise HTTPException(status_code=404, detail="Imagen no encontrada")
+
+        registro.estado = "anonimizado"
+        self.repo.guardar(registro)
+
+        return ImagenAnonimizada(command.imagen_id)
