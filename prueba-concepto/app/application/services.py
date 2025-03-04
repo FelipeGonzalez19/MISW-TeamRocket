@@ -61,6 +61,8 @@ class AnonimizacionService:
 
         return ImagenAnonimizada(command.imagen_id)
     
+    
+    
 class UsuarioService:
     def __init__(self, repo: UsuarioRepositorio):
         self.repo = repo

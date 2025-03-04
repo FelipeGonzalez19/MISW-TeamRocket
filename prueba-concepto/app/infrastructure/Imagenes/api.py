@@ -16,6 +16,7 @@ from .repositories import SQLAlchemyImagenRepositorio
 from .database import get_db, init_db, Base, engine
 from .models import ImagenInputDTO
 from fastapi import HTTPException
+from .despachadores import Despachador
 
 init_db()
 
@@ -68,6 +69,10 @@ def registrar_imagen(
     print("🔵 Recibido:", imagen_data.dict())
     try:
         command = RegistrarImagenCommand(imagen_data.dict())
+
+        despachador = Despachador()
+        despachador.publicar_comando(command, 'eventos-registrar-imagen')
+
         return service.registrar_imagen(command)
     except HTTPException as e:
         raise e
