@@ -8,8 +8,16 @@ En la carpeta /entrega-1 encontrará toda la información respecto a dicha entre
 
 # Entrega 3
 
-En la carpeta /entrega-3 encontrará toda la información respecto a dicha entrega
+En la carpeta /prueba-concepto encontrará toda la información respecto a dicha entrega
 
-[Documentación](./entrega-3/README.md)
+[Documentación](./prueba-concepto/README.md)
+
+---
+
+# Entrega 4
+
+En la carpeta /prueba-concepto encontrará detalles propios respecto a dicha entrega
+
+[Documentación](./entrega-4//README.md)
 
 ---
