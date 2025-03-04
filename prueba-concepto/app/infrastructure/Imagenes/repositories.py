@@ -2,8 +2,8 @@
 
 
 from sqlalchemy.orm import Session
-from ..domain.models import ImagenMedica
-from ..domain.repositories import ImagenRepositorio
+from ...domain.models import ImagenMedica
+from ...domain.repositories import ImagenRepositorio
 from .models import ImagenMedicaDB
 
 from sqlalchemy.exc import IntegrityError

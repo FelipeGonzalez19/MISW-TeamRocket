@@ -13,3 +13,7 @@ class RegistrarImagenCommand:
 class ObtenerImagenQuery:
     def __init__(self, imagen_id: str):
         self.imagen_id = imagen_id
+
+class AnonimizarImagenCommand:
+    def __init__(self, imagen_id: str):
+        self.imagen_id = imagen_id

@@ -2,16 +2,16 @@
 
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
-from ..application.services import (
+from ...application.services import (
     ImagenCommandService,
     ImagenQueryService,
 )
-from ..application.commands import (
+from ...application.commands import (
     ProcesarImagenCommand,
     RegistrarImagenCommand,
     ObtenerImagenQuery,
 )
-from ..domain.events import EventDispatcher
+from ...domain.events import EventDispatcher
 from .repositories import SQLAlchemyImagenRepositorio
 from .database import get_db, init_db, Base, engine
 from .models import ImagenInputDTO
